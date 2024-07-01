@@ -1,0 +1,20 @@
+.feedback {
+
+	&__title {
+		margin-bottom: 38px;
+	}
+
+	&__form {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+
+		// .form__description {
+		// 	order: 1;
+		// }
+
+		// .form__submit {
+		// 	order: 2;
+		// }
+	}
+}

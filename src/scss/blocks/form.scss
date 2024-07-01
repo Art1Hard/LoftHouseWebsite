@@ -1,0 +1,54 @@
+.form {
+	&__input {
+		padding: 12px;
+		background-color: $color-main02;
+		text-align: center;
+		caret-color: $color-accent;
+		font-size: 14px;
+		line-height: 1.9;
+		flex: 47%;
+		transition: background-color .2s ease-in-out;
+
+		&::placeholder {
+			color: $color-placeholder;
+			transition: opacity .2s ease-in-out;
+		}
+
+		&:focus {
+			background-color: $color-main03;
+
+			&::placeholder {
+				opacity: 0;
+			}
+		}
+
+		&--name {
+
+		}
+
+		&--phone {
+		}
+	}
+
+	&__description {
+		font-size: 13px;
+		line-height: 1.23;
+		color: $color-muted;
+		text-align: center;
+		flex: 47%;
+	}
+
+	&__submit {
+		padding: 12px;
+		flex: 47%;
+		font-weight: 700;
+		line-height: 1.7;
+		background-color: $color-accent;
+		transition: background-color .2s ease-in-out;
+
+		&:hover,
+		&:focus {
+			background-color: saturate($color-accent, 15%);
+		}
+	}
+}

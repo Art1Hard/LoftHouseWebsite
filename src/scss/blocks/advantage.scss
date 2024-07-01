@@ -1,0 +1,27 @@
+.advantage {
+	padding: 120px 0;
+	text-align: center;
+
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 70px;
+	}
+
+	&__item {
+	}
+
+	&__icon {
+		width: 80px;
+		height: 80px;
+		fill: $color-accent;
+		margin-bottom: 53px;
+	}
+
+	&__text {
+		font-family: $font-secondary;
+		font-weight: 300;
+		line-height: 1.35;
+	}
+}

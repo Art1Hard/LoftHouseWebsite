@@ -1,0 +1,49 @@
+.flat {
+
+	&__title {
+		margin-bottom: 88px;
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 30px;
+	}
+
+	&__card {
+		display: block;
+		min-height: 320px;
+		flex: 48%;
+		background-color: $color-accent;
+		display: flex;
+		align-items: end;
+		transition: all .3s ease-in-out;
+
+		&:hover {
+			transform: translateY(-5px);
+		}
+
+		&--olimp {
+			@include background-card-image("@img/flat/1.jpg");
+		}
+
+		&--loft {
+			@include background-card-image("@img/flat/2.jpg");
+		}
+
+		&--studio {
+			@include background-card-image("@img/flat/3.jpg");
+		}
+
+		&--prestij {
+			@include background-card-image("@img/flat/4.jpg");
+		}
+	}
+
+	&__text {
+		padding: 50px;
+		padding-right: 20px;
+		font-size: 24px;
+	}
+}

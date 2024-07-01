@@ -1,0 +1,31 @@
+.wdistrict {
+	padding: 180px 0;
+	background: linear-gradient(180deg, #242b33 10.42%, rgba(36, 43, 51, 0) 50.52%, #242b33 90.1%), linear-gradient(rgba(36, 43, 51, 0.9), rgba(36, 43, 51, 0.9)),
+	url("@img/wdistrict/background.jpg");
+	@include background-prop;
+
+	&__title {
+		margin-bottom: 17px;
+	}
+
+	&__row {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+
+	&__description {
+		line-height: 1.5;
+		flex: 48%;
+	}
+
+	&__form {
+		flex: 48%;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		column-gap: 30px;
+		row-gap: 35px;
+	}
+}
