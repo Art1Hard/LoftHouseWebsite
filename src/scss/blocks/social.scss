@@ -1,0 +1,20 @@
+.social {
+
+	&__icon {
+		height: 20px;
+		fill: $color-main;
+	}
+
+	&__icon--youtube {
+		width: 30px;
+	}
+
+	&__icon--vk {
+		width: 37px;
+	}
+
+	&__icon--facebook,
+	&__icon--instagram {
+		width: 21px;
+	}
+}

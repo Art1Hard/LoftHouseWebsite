@@ -1,0 +1,30 @@
+.footer {
+	padding: 60px 0;
+	background-color: $color-footer-bg;
+	letter-spacing: 0.05em;
+	font-size: 14px;
+
+	&__row {
+		display: flex;
+	}
+
+	&__logo {
+		fill: $color-main;
+		width: 160px;
+		height: 66px;
+	}
+
+	&__list-one {
+	}
+
+	&__list-two {
+	}
+
+	&__list-three {
+	}
+
+	&__social {
+		display: flex;
+		gap: 22px;
+	}
+}
