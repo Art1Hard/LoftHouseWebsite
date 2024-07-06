@@ -1,15 +1,23 @@
 .advantage {
+	position: relative;
 	padding: 120px 0;
-	text-align: center;
+
+	&::after {
+		content: "II";
+		@include decorNumberLeft(-30px);
+	}
 
 	&__row {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		column-gap: 70px;
+		column-gap: 7%;
+		row-gap: 70px;
+		text-align: center;
 	}
 
 	&__item {
+		flex: 18%;
 	}
 
 	&__icon {
@@ -21,6 +29,7 @@
 
 	&__text {
 		font-family: $font-secondary;
+		font-size: 20px;
 		font-weight: 300;
 		line-height: 1.35;
 	}

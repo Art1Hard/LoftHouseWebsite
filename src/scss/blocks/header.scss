@@ -11,4 +11,18 @@
 		height: 70px;
 		fill: $color-main;
 	}
+
+	&__nav {
+		@include mediaTablet {
+			display: none;
+		}
+	}
+
+	&__burger {
+		display: none;
+
+		@include mediaTablet {
+			display: block;
+		}
+	}
 }

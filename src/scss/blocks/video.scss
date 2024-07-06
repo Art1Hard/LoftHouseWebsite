@@ -1,4 +1,10 @@
 .video {
+	position: relative;
+
+	&::after {
+		content: "IV";
+		@include decorNumberLeft(40px);
+	}
 
 	&__link {
 		position: relative;

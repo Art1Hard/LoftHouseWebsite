@@ -1,8 +1,16 @@
 .social {
 
+	&__link:hover {
+		.social__icon {
+			fill: $color-accent;
+		}
+	}
+
 	&__icon {
 		height: 20px;
 		fill: $color-main;
+		display: block;
+		transition: fill .2s ease-in;
 	}
 
 	&__icon--youtube {
@@ -15,6 +23,6 @@
 
 	&__icon--facebook,
 	&__icon--instagram {
-		width: 21px;
+		width: 23px;
 	}
 }

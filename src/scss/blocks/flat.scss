@@ -1,4 +1,10 @@
 .flat {
+	position: relative;
+	
+	&::after {
+		content: "III";
+		@include decorNumberRight(-70px);
+	}
 
 	&__title {
 		margin-bottom: 88px;
@@ -43,6 +49,7 @@
 
 	&__text {
 		padding: 50px;
+		padding-bottom: 44px;
 		padding-right: 20px;
 		font-size: 24px;
 	}

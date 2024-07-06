@@ -1,5 +1,11 @@
 .map {
+	position: relative;
 	padding: 180px 0;
+
+	&::after {
+		content: "V";
+		@include decorNumberRight(110px);
+	}
 
 	&__title {
 		margin-bottom: 88px;
