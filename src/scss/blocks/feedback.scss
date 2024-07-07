@@ -1,6 +1,10 @@
 .feedback {
 	margin-bottom: 180px;
 
+	@include mediaTablet {
+		margin-bottom: 80px;
+	}
+
 	&__title {
 		margin-bottom: 38px;
 	}
@@ -9,13 +13,20 @@
 		display: flex;
 		align-items: center;
 		gap: 30px;
+		@include mediaTablet {
+			flex-wrap: wrap;
+		}
 
-		// .form__description {
-		// 	order: 1;
-		// }
+		.form__description {
+			@include mediaTablet {
+				order: 1;
+			}
+		}
 
-		// .form__submit {
-		// 	order: 2;
-		// }
+		.form__submit {
+			@include mediaTablet {
+				order: 2;
+			}
+		}
 	}
 }

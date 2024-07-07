@@ -8,6 +8,9 @@
 
 	&__title {
 		margin-bottom: 88px;
+		@include mediaTablet {
+			margin-bottom: 44px;
+		}
 	}
 
 	&__row {
@@ -52,5 +55,12 @@
 		padding-bottom: 44px;
 		padding-right: 20px;
 		font-size: 24px;
+
+		@include mediaTablet {
+			font-size: 20px;
+			padding-left: 30px;
+			padding-bottom: 30px;
+			padding-right: 10px;
+		}
 	}
 }

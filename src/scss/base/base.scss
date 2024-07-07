@@ -43,6 +43,10 @@ a {
 	font-weight: 700;
 	color: $color-accent;
 	font-size: 36px;
+
+	@include mediaTablet {
+		font-size: 28px;
+	}
 }
 
 .visually-hidden {
@@ -66,4 +70,8 @@ a {
 
 .none {
 	display: none;
+}
+
+.--locked {
+	overflow-y: hidden;
 }

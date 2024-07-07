@@ -1,6 +1,11 @@
 .advantage {
 	position: relative;
 	padding: 120px 0;
+	overflow: hidden;
+
+	@include mediaTablet {
+		padding: 90px 0;
+	}
 
 	&::after {
 		content: "II";
@@ -14,6 +19,10 @@
 		column-gap: 7%;
 		row-gap: 70px;
 		text-align: center;
+		@include mediaTablet {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+		}
 	}
 
 	&__item {
@@ -25,6 +34,12 @@
 		height: 80px;
 		fill: $color-accent;
 		margin-bottom: 53px;
+
+		@include mediaTablet {
+			width: 60px;
+			height: 60px;
+			margin-bottom: 30px;
+		}
 	}
 
 	&__text {
@@ -32,5 +47,9 @@
 		font-size: 20px;
 		font-weight: 300;
 		line-height: 1.35;
+
+		@include mediaTablet {
+			font-size: 16px;
+		}
 	}
 }
