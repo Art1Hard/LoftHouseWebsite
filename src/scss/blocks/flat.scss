@@ -29,8 +29,18 @@
 		align-items: end;
 		transition: all .3s ease-in-out;
 
-		&:hover {
-			transform: translateY(-5px);
+		/* мышь, тачпад */
+		@media (hover: hover) and (pointer: fine) {
+			&:hover {
+				transform: translateY(-5px);
+			}
+		}
+
+		/* смартфоны, устройства с сенсорным экраном, с которым работают пальцами */
+		@media (hover: none) and (pointer: coarse) {
+			&:hover {
+				color: $color-main;
+			}
 		}
 
 		&--olimp {
