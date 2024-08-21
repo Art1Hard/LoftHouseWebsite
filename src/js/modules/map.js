@@ -1,16 +1,29 @@
 export async function initMap() {
-
-	const mapDiv = document.getElementById('map'); //* Оболочка яндекс карты
+	const mapDiv = document.getElementById("map"); //* Оболочка яндекс карты
+	const behaviors = ["drag", "pinchZoom", "dblClick"];
 
 	//* Подключение пакетов и зависимостей
-	const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker, YMapControls, YMapControlButton } = window.ymaps3;
-	const { YMapGeolocationControl, YMapZoomControl } = await window.ymaps3.import('@yandex/ymaps3-controls@0.0.1');
-	const { YMapDefaultMarker } = await window.ymaps3.import('@yandex/ymaps3-markers@0.0.1');
+	const {
+		YMap,
+		YMapDefaultSchemeLayer,
+		YMapDefaultFeaturesLayer,
+		YMapMarker,
+		YMapControls,
+		YMapControlButton,
+	} = window.ymaps3;
+	const { YMapGeolocationControl, YMapZoomControl } =
+		await window.ymaps3.import("@yandex/ymaps3-controls@0.0.1");
+	const { YMapDefaultMarker } = await window.ymaps3.import(
+		"@yandex/ymaps3-markers@0.0.1"
+	);
 
 	//* Controls
-	const zoomControl = new YMapControls({ position: 'left' });
-	const geolocationControl = new YMapControls({ position: 'top left', orientation: 'vertical' });
-	const fullscreenControl = new YMapControls({ position: 'top right' });
+	const zoomControl = new YMapControls({ position: "left" });
+	const geolocationControl = new YMapControls({
+		position: "top left",
+		orientation: "vertical",
+	});
+	const fullscreenControl = new YMapControls({ position: "top right" });
 
 	//* Иницилиазируем карту
 	const map = new YMap(
@@ -21,13 +34,13 @@ export async function initMap() {
 		{
 			location: {
 				center: [30.338928000000006, 59.943543564154155],
-				zoom: 16
+				zoom: 16,
 			},
 			//* Поведение карты
-			behaviors: ['drag', 'pinchZoom', 'dblClick']
+			behaviors,
 		}
 	)
-		.addChild(new YMapDefaultSchemeLayer({ theme: 'dark' })) //* Базовое наложение (обязательно)
+		.addChild(new YMapDefaultSchemeLayer({ theme: "dark" })) //* Базовое наложение (обязательно)
 		.addChild(new YMapDefaultFeaturesLayer()) //* Наложение для меток
 		.addChild(zoomControl)
 		.addChild(geolocationControl)
@@ -55,12 +68,16 @@ export async function initMap() {
 	map.addChild(defaultMarker);
 
 	//* Добавляем иконку в кнопке как простой div элемент
-	const fullScreenElement = document.createElement('div');
-	fullScreenElement.className = 'fullscreen';
+	const fullScreenElement = document.createElement("div");
+	fullScreenElement.className = "fullscreen";
 
 	//* Событие fullscreenchange вызывается сразу после переключения браузера в полноэкранный режим или выхода из него.
-	document.addEventListener('fullscreenchange', function () {
-		fullScreenElement.classList.toggle('exit-fullscreen');
+	document.addEventListener("fullscreenchange", function () {
+		fullScreenElement.classList.toggle("exit-fullscreen");
+		fullScreenElement.classList.contains("exit-fullscreen")
+			? behaviors.push("scrollZoom")
+			: behaviors.pop();
+		map.setBehaviors(behaviors);
 	});
 
 	function fullScreenBtnHandler() {
@@ -76,7 +93,7 @@ export async function initMap() {
 	//* Add YMapControlButton that will enable or disable fullscreen mode
 	const fullScreenBtn = new YMapControlButton({
 		element: fullScreenElement,
-		onClick: fullScreenBtnHandler
+		onClick: fullScreenBtnHandler,
 	});
 
 	fullscreenControl.addChild(fullScreenBtn);

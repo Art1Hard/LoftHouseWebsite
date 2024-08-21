@@ -3,7 +3,6 @@
 @import "base/vars";
 @import "base/base";
 
-
 //* Blocks
 @import "blocks/header";
 @import "blocks/nav";
@@ -18,3 +17,6 @@
 @import "blocks/footer";
 @import "blocks/social";
 @import "blocks/burger";
+
+//* Components
+@import "components/lightbox";

@@ -36,7 +36,7 @@
 	@media (hover: none) and (pointer: coarse) {
 		opacity: 1;
 	}
-	transition: opacity .3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 
 	&__container {
 		background-color: $color-dark !important;

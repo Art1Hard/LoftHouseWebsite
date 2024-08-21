@@ -1,5 +1,5 @@
 .burger {
-	--time: .1s;
+	--time: 0.1s;
 	--width: 35px;
 	--height: 30px;
 	--line-height: 1px;
@@ -19,7 +19,7 @@
 
 		&::before,
 		&::after {
-			content: '';
+			content: "";
 			display: block;
 
 			position: absolute;
@@ -30,13 +30,13 @@
 
 			background-color: var(--color);
 			transition: transform var(--time) ease-in,
-			top var(--time) linear var(--time);
+				top var(--time) linear var(--time);
 		}
 
 		&::before {
 			top: calc(var(--line-height) * -8);
 		}
-		
+
 		&::after {
 			top: calc(var(--line-height) * 8);
 		}
@@ -50,7 +50,7 @@
 			&::after {
 				top: 0;
 				transition: top var(--time) linear,
-				transform var(--time) ease-in var(--time);
+					transform var(--time) ease-in var(--time);
 			}
 
 			&::before {
